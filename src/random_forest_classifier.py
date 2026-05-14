@@ -1,9 +1,7 @@
 import os
 
-from pyspark.ml import Pipeline
-from pyspark.ml.classification import OneVsRest, LogisticRegression, DecisionTreeClassifier, RandomForestClassifier
-from pyspark.ml.feature import StringIndexer, OneHotEncoder, VectorAssembler
-from pyspark.ml.regression import LinearRegression, RandomForestRegressor
+from pyspark.ml.classification import OneVsRest, RandomForestClassifier
+from pyspark.ml.feature import StringIndexer, VectorAssembler
 from pyspark.sql import SparkSession
 
 spark = SparkSession.builder \
