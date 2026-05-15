@@ -40,7 +40,7 @@ try:
     final_df = assembler.transform(indexed_df)
 
     # One-vs-Rest классификация с RandomForestClassifier
-    rf = RandomForestClassifier(featuresCol="features", labelCol="label", numTrees=10)
+    rf = RandomForestClassifier(featuresCol="features", labelCol="label")
     ovr = OneVsRest(classifier=rf, featuresCol="features", labelCol="label")
     model = ovr.fit(final_df)
 

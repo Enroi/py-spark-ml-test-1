@@ -43,7 +43,7 @@ try:
     # поэтому нужно обучить отдельные модели для каждого класса (OneVsRest)
     from pyspark.ml.classification import OneVsRest
 
-    svm = LinearSVC(featuresCol="features", labelCol="label", maxIter=100, regParam=0.1)
+    svm = LinearSVC(featuresCol="features", labelCol="label")
     ovr = OneVsRest(classifier=svm, featuresCol="features", labelCol="label")
     model = ovr.fit(final_df)
 
@@ -74,7 +74,7 @@ type_1: coefficient = 0.0000
 type_2: coefficient = 0.0000
 type_3: coefficient = 0.0000
 type_4: coefficient = 0.0000
-type_5: coefficient = 0.0362
+type_5: coefficient = 0.0442
 type_6: coefficient = 0.0000
 type_7: coefficient = 0.0000
 type_8: coefficient = 0.0000
