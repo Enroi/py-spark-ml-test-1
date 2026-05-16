@@ -43,8 +43,7 @@ try:
     # поэтому нужно обучить отдельные модели для каждого класса (OneVsRest)
     from pyspark.ml.classification import OneVsRest
 
-    svm = LinearSVC(featuresCol="features", labelCol="label")
-    ovr = OneVsRest(classifier=svm, featuresCol="features", labelCol="label")
+    ovr = OneVsRest(classifier=LinearSVC(), featuresCol="features", labelCol="label")
     model = ovr.fit(final_df)
 
     # Для LinearSVC нет прямой featureImportances,
