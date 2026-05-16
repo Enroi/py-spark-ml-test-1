@@ -40,8 +40,7 @@ try:
     final_df = assembler.transform(indexed_df)
 
     # One-vs-Rest классификация с DecisionTreeClassifier
-    dt = DecisionTreeClassifier(featuresCol="features", labelCol="label")
-    ovr = OneVsRest(classifier=dt, featuresCol="features", labelCol="label")
+    ovr = OneVsRest(classifier = DecisionTreeClassifier(), featuresCol = "features", labelCol = "label")
     model = ovr.fit(final_df)
 
     # Пары (имя типа, важность признака)
