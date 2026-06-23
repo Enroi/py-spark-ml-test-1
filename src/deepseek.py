@@ -44,8 +44,6 @@ try:
     lr = LogisticRegression(
         featuresCol="features",
         labelCol="label",
-        predictionCol="prediction",
-        probabilityCol="probability"
     )
 
     model = lr.fit(final_df)
